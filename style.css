@@ -462,3 +462,51 @@ i{
 #footer p{
     text-align: left !important;
 }
+/* Circular Cocktails menu button */
+.starter-btn-wrap #drinks {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #234D3A;
+  border: 2px solid #bc9e82;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* Expanding pulse ring */
+.starter-btn-wrap #drinks::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 2px solid #234D3A;
+  border-radius: 50%;
+  z-index: -1;
+  animation: cocktailsPulse 2s ease-out infinite;
+}
+
+@keyframes cocktailsPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.starter-btn-wrap #drinks:hover {
+  background-color: #1b3d2e;
+  color: #fff;
+}
